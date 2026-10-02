@@ -664,3 +664,29 @@
 }
 
 /*** Footer End ***/
+
+
+/*** Navbar Logo Start ***/
+
+.navbar-logo {
+    display: block;
+    width: auto;
+    height: 34px;
+    padding: 5px 12px;
+    background: #fff;
+    border-radius: 6px;
+    object-fit: contain;
+}
+
+.navbar-logo:hover {
+    background: #fff;
+}
+
+@media (max-width: 575.98px) {
+    .navbar-logo {
+        height: 28px;
+        padding: 4px 9px;
+    }
+}
+
+/*** Navbar Logo End ***/

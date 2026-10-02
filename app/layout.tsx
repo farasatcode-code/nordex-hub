@@ -16,6 +16,11 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  icons: {
+    icon: [{ url: "/favicon.png", type: "image/png", sizes: "512x512" }],
+    shortcut: ["/favicon.png"],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
   keywords: [
     "IT solutions",
     "web design",

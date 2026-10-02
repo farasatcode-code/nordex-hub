@@ -16,10 +16,14 @@ export default function Navbar() {
     <div className="container-fluid bg-primary">
       <div className="container">
         <nav className="navbar navbar-dark navbar-expand-lg py-0">
-          <Link href="/" className="navbar-brand">
-            <h1 className="text-white fw-bold d-block">
-              High<span className="text-secondary">Tech</span>{" "}
-            </h1>
+          <Link href="/" className="navbar-brand me-lg-3 py-2">
+            <img
+              src="/img/logo.png"
+              alt={siteConfig.name}
+              width={600}
+              height={126}
+              className="navbar-logo"
+            />
           </Link>
 
           <button
