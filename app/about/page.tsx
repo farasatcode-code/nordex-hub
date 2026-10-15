@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import PageHeader from "@/components/layout/PageHeader";
 import AboutSection from "@/components/sections/AboutSection";
-import FactSection from "@/components/sections/FactSection";
 import TeamSection from "@/components/sections/TeamSection";
 
 export const metadata: Metadata = {
@@ -15,7 +14,6 @@ export default function AboutPage() {
   return (
     <>
       <PageHeader title="About Us" />
-      <FactSection />
       <AboutSection />
       <TeamSection
         spacing={{ section: "pb-5 mb-5", container: "container pb-5" }}

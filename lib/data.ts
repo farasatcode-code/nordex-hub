@@ -1,16 +1,3 @@
-export type Fact = {
-  value: number;
-  label: string;
-  delay: string;
-};
-
-export const facts: Fact[] = [
-  { value: 99, label: "Success in getting happy customer", delay: ".1s" },
-  { value: 25, label: "Thousands of successful business", delay: ".3s" },
-  { value: 120, label: "Total clients who love HighTech", delay: ".5s" },
-  { value: 5, label: "Stars reviews given by satisfied clients", delay: ".7s" },
-];
-
 export type Service = {
   icon: string;
   title: string;
@@ -208,24 +195,17 @@ export type Slide = {
   heading: string;
   headingAnimation: string;
   paragraph: string;
+  paragraphLine: string;
 };
 
 export const slides: Slide[] = [
   {
     image: "/img/carousel-1.jpg",
-    eyebrow: "Best IT Solutions",
-    heading: "An Innovative IT Solutions Agency",
+    eyebrow: "Smart Enterprise Solutions",
+    heading: "NORDEX HUB",
     headingAnimation: "animated fadeInRight",
-    paragraph:
-      "Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Pellentesque aliquam dolor eget urna ultricies tincidunt.",
-  },
-  {
-    image: "/img/carousel-2.jpg",
-    eyebrow: "Best IT Solutions",
-    heading: "Quality Digital Services You Really Need!",
-    headingAnimation: "animated fadeInLeft",
-    paragraph:
-      "Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Pellentesque aliquam dolor eget urna ultricies tincidunt.",
+    paragraph: "Government Contractor & Supplier | Private Sector solutions",
+    paragraphLine: "Gilgit Baltistan",
   },
 ];
 

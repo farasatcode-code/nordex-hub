@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
 import PageHeader from "@/components/layout/PageHeader";
-import FactSection from "@/components/sections/FactSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import { pageSpacing } from "@/lib/layout";
 
@@ -15,7 +14,6 @@ export default function ServicePage() {
   return (
     <>
       <PageHeader title="Services" />
-      <FactSection />
       <ServicesSection spacing={pageSpacing} />
     </>
   );

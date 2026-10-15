@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import PageHeader from "@/components/layout/PageHeader";
 import ContactSection from "@/components/sections/ContactSection";
-import FactSection from "@/components/sections/FactSection";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -14,7 +13,6 @@ export default function ContactPage() {
   return (
     <>
       <PageHeader title="Contact Us" breadcrumb="Contact" />
-      <FactSection />
       <ContactSection
         spacing={{ section: "py-5 mt-5", container: "container py-5" }}
       />

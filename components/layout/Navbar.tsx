@@ -13,17 +13,21 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <div className="container-fluid bg-primary">
+    <div className="container-fluid bg-white">
       <div className="container">
-        <nav className="navbar navbar-dark navbar-expand-lg py-0">
-          <Link href="/" className="navbar-brand me-lg-3 py-2">
+        <nav className="navbar navbar-expand-lg py-0">
+          <Link href="/" className="navbar-brand me-lg-3">
             <img
               src="/img/logo.png"
               alt={siteConfig.name}
-              width={600}
-              height={126}
+              width={2084}
+              height={2084}
               className="navbar-logo"
             />
+            <span className="navbar-brand-text">
+              {siteConfig.brandName}
+              <span className="navbar-brand-suffix"> {siteConfig.brandSuffix}</span>
+            </span>
           </Link>
 
           <button
@@ -62,7 +66,7 @@ export default function Navbar() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`nav-item nav-link${isActive(pathname, item.href) ? " active text-secondary" : ""}`}
+                    className={`nav-item nav-link${isActive(pathname, item.href) ? " active" : ""}`}
                   >
                     {item.label}
                   </Link>
@@ -71,26 +75,10 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div className="d-none d-xl-flex flex-shirink-0">
-            <div id="phone-tada" className="d-flex align-items-center justify-content-center me-4">
-              <a href={siteConfig.phoneHref} className="position-relative animated tada infinite">
-                <i className="fa fa-phone-alt text-white fa-2x" />
-                <div className="position-absolute" style={{ top: -7, left: 20 }}>
-                  <span>
-                    <i className="fa fa-comment-dots text-secondary" />
-                  </span>
-                </div>
-              </a>
-            </div>
-
-            <div className="d-flex flex-column pe-4 border-end">
-              <span className="text-white-50">Have any questions?</span>
-              <span className="text-secondary">Call: {siteConfig.phone}</span>
-            </div>
-
-            <div className="d-flex align-items-center justify-content-center ms-4">
+          <div className="d-flex flex-shirink-0 ms-lg-4">
+            <div className="d-flex align-items-center justify-content-center">
               <a href="#">
-                <i className="bi bi-search text-white fa-2x" />{" "}
+                <i className="bi bi-search text-primary fa-2x" />
               </a>
             </div>
           </div>

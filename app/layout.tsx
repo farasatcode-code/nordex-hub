@@ -5,7 +5,7 @@ import BackToTop from "@/components/layout/BackToTop";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import Spinner from "@/components/layout/Spinner";
-import Topbar from "@/components/layout/Topbar";
+
 import VendorScripts from "@/components/VendorScripts";
 import WowInitializer from "@/components/WowInitializer";
 import { siteConfig } from "@/lib/site";
@@ -58,7 +58,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body>
         <Spinner />
-        <Topbar />
         <Navbar />
         {children}
         <Footer />

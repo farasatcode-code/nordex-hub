@@ -1,13 +1,15 @@
 export const siteConfig = {
   name: "HighTech",
+  brandName: "nordex",
+  brandSuffix: "HUB",
   tagline: "An Innovative IT Solutions Agency",
   title: "HighTech - IT Solutions Website Template",
   description:
     "HighTech is an innovative IT solutions agency offering web design, web development, UI/UX design, web security, digital marketing and programming services.",
   address: "23 Ranking Street, New York",
   shortAddress: "23 rank Str, NY",
-  email: "info@example.com",
-  topbarEmail: "Email@Example.com",
+  email: "farasat.code@gmail.com",
+  topbarEmail: "farasat.code@gmail.com",
   phone: "+0123 456 7890",
   phoneHref: "tel:+0123456789",
   mapsUrl: "https://goo.gl/maps/Zd4BCynmTb98ivUJ6",
@@ -44,17 +46,7 @@ export const primaryNav: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/service" },
-  { label: "Projects", href: "/project" },
-  {
-    label: "Pages",
-    href: "#",
-    children: [
-      { label: "Our Blog", href: "/blog" },
-      { label: "Our Team", href: "/team" },
-      { label: "Testimonial", href: "/testimonial" },
-      { label: "404 Page", href: "/404-page" },
-    ],
-  },
+  { label: "Testimonial", href: "/testimonial" },
   { label: "Contact", href: "/contact" },
 ];
 

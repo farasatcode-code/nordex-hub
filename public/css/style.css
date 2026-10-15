@@ -1,3 +1,9 @@
+:root {
+    --nav-link-color: #14572c;
+    --nav-link-hover-color: #1e8a42;
+}
+
+
 /*** Spinner Start ***/
 
 #spinner {
@@ -65,58 +71,29 @@
 /*** Button End ***/
 
 
-/*** Topbar Start ***/
-
-.topbar .top-info {
-    letter-spacing: 1px;
-}
-
-.topbar .top-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.topbar .top-link a {
-    margin-right: 10px;
-}
-
-#note {
-    width: 500px;
-    overflow: hidden;
-}
-
-#note small {
-    position: relative;
-    display: inline-block;
-    animation: mymove 5s infinite;
-    animation-timing-function: all;
-}
-
-@keyframes mymove {
-    from {left: -100%;}
-    to {left: 100%;}
-}
-
 /*** Topbar End ***/
 
 
 /*** Navbar Start ***/
+.navbar {
+    --navbar-height: 86px;
+}
+
 .navbar .navbar-nav {
     padding: 15px 0;
 }
 
 .navbar .navbar-nav .nav-link {
     padding: 10px;
-    color: var(--bs-white);
+    color: var(--nav-link-color);
     font-size: 18px;
     outline: none;
-    
 }
 
 .navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link:focus,
 .navbar .navbar-nav .nav-link.active {
-    color: var(--bs-secondary) !important;
+    color: var(--nav-link-hover-color) !important;
 }
 
 .navbar .dropdown-toggle::after {
@@ -258,6 +235,82 @@
     background: var(--bs-secondary);
     opacity: 1;
 }
+
+
+/*** Hero Start ***/
+
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 640px;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .6);
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero .hero-heading {
+    font-family: "Saira", sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero .carousel-caption {
+    position: static;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    padding: 0;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 0 auto 35px auto;
+}
+
+@media (max-width: 992px) {
+    .hero {
+        min-height: 500px;
+    }
+
+    .hero h1 {
+        font-size: 40px !important;
+    }
+
+    .hero p {
+        font-size: 16px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 400px;
+    }
+
+    .hero h1 {
+        font-size: 28px !important;
+    }
+
+    .hero p {
+        font-size: 14px !important;
+    }
+}
+
+/*** Hero End ***/
 
 @media (max-width: 992px) {
     .carousel-item {
@@ -668,24 +721,70 @@
 
 /*** Navbar Logo Start ***/
 
+.navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
 .navbar-logo {
     display: block;
+    flex-shrink: 0;
     width: auto;
-    height: 34px;
-    padding: 5px 12px;
-    background: #fff;
-    border-radius: 6px;
+    /* Taller than --navbar-height is fine: it bleeds out instead of growing the bar. */
+    height: 64px;
     object-fit: contain;
 }
 
 .navbar-logo:hover {
-    background: #fff;
+    opacity: .85;
+}
+
+.navbar-brand-text {
+    font-family: "Saira", sans-serif;
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--nav-link-color);
+    white-space: nowrap;
+}
+
+.navbar-brand-suffix {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+@media (min-width: 992px) {
+    /* Lock the bar height so logo/brand growth never changes it. */
+    .navbar {
+        height: var(--navbar-height);
+        overflow: visible;
+    }
+
+    .navbar .navbar-brand {
+        height: 100%;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .navbar-logo {
+        height: 46px;
+    }
+
+    .navbar-brand-text {
+        font-size: 22px;
+    }
 }
 
 @media (max-width: 575.98px) {
     .navbar-logo {
-        height: 28px;
-        padding: 4px 9px;
+        height: 36px;
+    }
+
+    .navbar-brand-text {
+        font-size: 18px;
     }
 }
 

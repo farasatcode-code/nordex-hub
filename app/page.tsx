@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import AboutSection from "@/components/sections/AboutSection";
 import BlogSection from "@/components/sections/BlogSection";
 import ContactSection from "@/components/sections/ContactSection";
-import FactSection from "@/components/sections/FactSection";
 import HeroCarousel from "@/components/sections/HeroCarousel";
 import ProjectSection from "@/components/sections/ProjectSection";
 import ServicesSection from "@/components/sections/ServicesSection";
@@ -19,7 +18,6 @@ export default function HomePage() {
   return (
     <>
       <HeroCarousel />
-      <FactSection />
       <AboutSection
         spacing={{ section: "py-5 my-5", container: "container pt-5" }}
       />

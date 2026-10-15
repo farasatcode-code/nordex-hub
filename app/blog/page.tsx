@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import PageHeader from "@/components/layout/PageHeader";
 import BlogSection from "@/components/sections/BlogSection";
-import FactSection from "@/components/sections/FactSection";
 import { pageSpacing } from "@/lib/layout";
 
 export const metadata: Metadata = {
@@ -14,7 +13,6 @@ export default function BlogPage() {
   return (
     <>
       <PageHeader title="Our Blog" breadcrumb="Blog" />
-      <FactSection />
       <BlogSection spacing={pageSpacing} />
     </>
   );

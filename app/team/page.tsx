@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
 import PageHeader from "@/components/layout/PageHeader";
-import FactSection from "@/components/sections/FactSection";
 import TeamSection from "@/components/sections/TeamSection";
 import { pageSpacing } from "@/lib/layout";
 
@@ -14,7 +13,6 @@ export default function TeamPage() {
   return (
     <>
       <PageHeader title="Our Team" />
-      <FactSection />
       <TeamSection spacing={pageSpacing} />
     </>
   );

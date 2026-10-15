@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
 import PageHeader from "@/components/layout/PageHeader";
-import FactSection from "@/components/sections/FactSection";
 import NotFoundSection from "@/components/sections/NotFoundSection";
 
 export const metadata: Metadata = {
@@ -13,7 +12,6 @@ export default function NotFound() {
   return (
     <>
       <PageHeader title="404 Error" />
-      <FactSection />
       <NotFoundSection />
     </>
   );
