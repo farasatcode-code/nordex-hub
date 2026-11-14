@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
+import ContactModalProvider from "@/components/contact/ContactModalProvider";
 import BackToTop from "@/components/layout/BackToTop";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
@@ -11,24 +12,54 @@ import WowInitializer from "@/components/WowInitializer";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nordexhub.com"),
   title: {
     default: siteConfig.title,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.name }],
+  keywords: [
+    "software development",
+    "AI solutions",
+    "IT infrastructure",
+    "government technology",
+    "procurement",
+    "Gilgit-Baltistan",
+    "Pakistan",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: siteConfig.name,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [
+      {
+        url: "/img/logo.png",
+        width: 2084,
+        height: 2084,
+        alt: siteConfig.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: ["/img/logo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   icons: {
     icon: [{ url: "/favicon.png", type: "image/png", sizes: "512x512" }],
     shortcut: ["/favicon.png"],
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
-  keywords: [
-    "IT solutions",
-    "web design",
-    "web development",
-    "UI/UX design",
-    "cyber security",
-    "digital marketing",
-  ],
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -56,14 +87,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link href="/css/bootstrap.min.css" rel="stylesheet" />
         <link href="/css/style.css" rel="stylesheet" />
       </head>
-      <body>
-        <Spinner />
-        <Navbar />
-        {children}
-        <Footer />
-        <BackToTop />
-        <VendorScripts />
-        <WowInitializer />
+      <body suppressHydrationWarning>
+        <ContactModalProvider>
+          <Spinner />
+          <Navbar />
+          {children}
+          <Footer />
+          <BackToTop />
+          <VendorScripts />
+          <WowInitializer />
+        </ContactModalProvider>
       </body>
     </html>
   );

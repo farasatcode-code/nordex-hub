@@ -1,32 +1,12 @@
 import type { Metadata } from "next";
 
-import AboutSection from "@/components/sections/AboutSection";
-import BlogSection from "@/components/sections/BlogSection";
-import ContactSection from "@/components/sections/ContactSection";
-import HeroCarousel from "@/components/sections/HeroCarousel";
-import ProjectSection from "@/components/sections/ProjectSection";
-import ServicesSection from "@/components/sections/ServicesSection";
-import TeamSection from "@/components/sections/TeamSection";
-import TestimonialSection from "@/components/sections/TestimonialSection";
+import HomePageContent from "@/components/home/HomePageContent";
 
 export const metadata: Metadata = {
   description:
-    "HighTech is an innovative IT solutions agency offering web design, web development, UI/UX design, web security, digital marketing and programming services.",
+    "M/S Nordex Hub delivers high-performance software systems, advanced AI solutions, institutional IT infrastructure, and rigorous general order supply for private enterprises and government sectors.",
 };
 
 export default function HomePage() {
-  return (
-    <>
-      <HeroCarousel />
-      <AboutSection
-        spacing={{ section: "py-5 my-5", container: "container pt-5" }}
-      />
-      <ServicesSection />
-      <ProjectSection />
-      <BlogSection />
-      <TeamSection />
-      <TestimonialSection />
-      <ContactSection />
-    </>
-  );
+  return <HomePageContent />;
 }

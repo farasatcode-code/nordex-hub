@@ -1,8 +1,8 @@
 {
-  "name": "hightech-it-solutions",
+  "name": "nordexhub",
   "version": "1.0.0",
   "private": true,
-  "description": "HighTech - IT Solutions website, converted from the HTML Codex static template to Next.js.",
+  "description": "M/S Nordex Hub website built with Next.js.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

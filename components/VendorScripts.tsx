@@ -29,7 +29,7 @@ export default function VendorScripts() {
       {VENDOR_SCRIPTS.slice(0, settled + 1).map((src, index) => (
         <Script
           key={src}
-          id={`hightech-vendor-${index}`}
+          id={`nordexhub-vendor-${index}`}
           src={src}
           strategy="afterInteractive"
           onLoad={index === VENDOR_SCRIPTS.length - 1 ? markLibsReady : advance}

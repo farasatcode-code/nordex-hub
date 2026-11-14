@@ -2,21 +2,52 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
+import { useContactModal } from "@/components/contact/contact-modal-context";
 import { primaryNav, siteConfig } from "@/lib/site";
 
 function isActive(pathname: string, href: string): boolean {
-  return href !== "#" && pathname === href;
+  if (href === "/") {
+    return pathname === "/";
+  }
+
+  return pathname === href || pathname.startsWith(`${href}/`);
 }
 
 export default function Navbar() {
   const pathname = usePathname();
+  const { openContactModal } = useContactModal();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
+
+  useEffect(() => {
+    if (!menuOpen) {
+      return;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [menuOpen]);
+
+  const handleGetInTouch = () => {
+    closeMenu();
+    openContactModal({ title: "contact" });
+  };
 
   return (
     <div className="container-fluid bg-white">
       <div className="container">
         <nav className="navbar navbar-expand-lg py-0">
-          <Link href="/" className="navbar-brand me-lg-3">
+          <Link href="/" className="navbar-brand me-lg-3" onClick={closeMenu}>
             <img
               src="/img/logo.png"
               alt={siteConfig.name}
@@ -33,53 +64,45 @@ export default function Navbar() {
           <button
             type="button"
             className="navbar-toggler me-0"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+            aria-expanded={menuOpen}
+            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+            onClick={() => setMenuOpen((open) => !open)}
           >
-            <span className="navbar-toggler-icon" />
+            <span className="navbar-toggle-icon" aria-hidden="true">
+              <span className="navbar-toggle-bar" />
+              <span className="navbar-toggle-bar" />
+              <span className="navbar-toggle-bar" />
+            </span>
           </button>
 
-          <div className="collapse navbar-collapse bg-transparent" id="navbarCollapse">
+          <div
+            className={`collapse navbar-collapse bg-transparent${menuOpen ? " show" : ""}`}
+            id="navbarCollapse"
+          >
             <div className="navbar-nav ms-auto mx-xl-auto p-0">
-              {primaryNav.map((item) =>
-                item.children ? (
-                  <div className="nav-item dropdown" key={item.label}>
-                    <a href={item.href} className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                      {item.label}
-                    </a>
-                    <div className="dropdown-menu rounded">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          className="dropdown-item"
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                ) : (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={`nav-item nav-link${isActive(pathname, item.href) ? " active" : ""}`}
-                  >
-                    {item.label}
-                  </Link>
-                ),
-              )}
+              {primaryNav.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`nav-item nav-link${
+                    isActive(pathname, item.href) ? " active" : ""
+                  }`}
+                  onClick={closeMenu}
+                >
+                  {item.label}
+                </Link>
+              ))}
             </div>
-          </div>
 
-          <div className="d-flex flex-shirink-0 ms-lg-4">
-            <div className="d-flex align-items-center justify-content-center">
-              <a href="#">
-                <i className="bi bi-search text-primary fa-2x" />
-              </a>
+            <div className="navbar-cta d-flex pb-3 pb-lg-0">
+              <button
+                type="button"
+                className="btn navbar-cta-btn px-4 py-2"
+                onClick={handleGetInTouch}
+              >
+                Get in Touch
+              </button>
             </div>
           </div>
         </nav>

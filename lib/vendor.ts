@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 
-export const LIBS_READY_EVENT = "hightech:libs-ready";
+export const LIBS_READY_EVENT = "nordexhub:libs-ready";
 
 export function markLibsReady(): void {
-  window.__hightechLibsReady = true;
+  window.__nordexhubLibsReady = true;
   window.dispatchEvent(new Event(LIBS_READY_EVENT));
 }
 
@@ -19,7 +19,7 @@ export function useLibsReady(): boolean {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    if (window.__hightechLibsReady) {
+    if (window.__nordexhubLibsReady) {
       setReady(true);
       return;
     }

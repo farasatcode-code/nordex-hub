@@ -1,19 +1,13 @@
 import type { Metadata } from "next";
 
-import PageHeader from "@/components/layout/PageHeader";
-import TeamSection from "@/components/sections/TeamSection";
-import { pageSpacing } from "@/lib/layout";
+import TeamPageContent from "@/components/team/TeamPageContent";
 
 export const metadata: Metadata = {
-  title: "Our Team",
-  description: "Meet the experts behind HighTech's IT solutions and digital services.",
+  title: "Team",
+  description:
+    "Combining technical engineering, administrative governance, strategic execution, and digital media to drive our vision forward.",
 };
 
 export default function TeamPage() {
-  return (
-    <>
-      <PageHeader title="Our Team" />
-      <TeamSection spacing={pageSpacing} />
-    </>
-  );
+  return <TeamPageContent />;
 }

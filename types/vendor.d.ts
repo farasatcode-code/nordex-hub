@@ -82,7 +82,7 @@ interface Window {
   bootstrap?: BootstrapStatic;
   jQuery?: JQueryStatic;
   $?: JQueryStatic;
-  __hightechLibsReady?: boolean;
+  __nordexhubLibsReady?: boolean;
 }
 
 declare const $: JQueryStatic;
