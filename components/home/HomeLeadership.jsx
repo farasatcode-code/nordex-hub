@@ -12,9 +12,9 @@ export default function HomeLeadership() {
           Led by Experienced Management
         </h2>
 
-        <div className="row justify-content-center g-4">
+        <div className="row justify-content-center g-3 g-lg-4">
           {leaders.map((member, index) => (
-            <div key={member.name} className="col-sm-6 col-lg-4">
+            <div key={member.name} className="col-12 col-sm-6 col-lg-4">
               <article
                 className="team-profile-card home-leadership-card wow fadeInUp"
                 data-wow-delay={`${0.15 + index * 0.08}s`}

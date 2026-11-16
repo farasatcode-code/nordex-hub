@@ -34,13 +34,13 @@ const services = [
 export default function HomeServices() {
   return (
     <section id="services-overview" className="home-services" >
-      <div className="d-flex flex-row justify-content-center mb-4 home-section-title wow fadeIn" data-wow-delay=".1s">
-        <h1>Our Services</h1>
-      </div>
       <div className="container">
-        <div className="row g-4">
+        <div className="mb-4 home-section-title wow fadeIn" data-wow-delay=".1s">
+          <h1 className="mb-0">Our Services</h1>
+        </div>
+        <div className="row g-3 g-lg-4">
           {services.map((service, index) => (
-            <div key={service.title} className="col-xl-3 col-lg-6">
+            <div key={service.title} className="col-12 col-md-6 col-xl-3">
               <article
                 className="home-service-card wow fadeIn"
                 data-wow-delay={`${0.1 + index * 0.1}s`}

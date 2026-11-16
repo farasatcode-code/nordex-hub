@@ -27,9 +27,9 @@ export default function HomeWhyChoose() {
           Why Choose Nordex Hub
         </h2>
 
-        <div className="row g-4">
+        <div className="row g-3 g-lg-4">
           {points.map((point, index) => (
-            <div key={point.title} className="col-lg-4">
+            <div key={point.title} className="col-12 col-md-6 col-lg-4">
               <div
                 className="home-why-card wow fadeInUp"
                 data-wow-delay={`${0.15 + index * 0.1}s`}

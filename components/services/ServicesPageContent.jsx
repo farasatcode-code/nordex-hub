@@ -70,7 +70,7 @@ export default function ServicesPageContent() {
               <div className="col-lg-7">
                 <div className="row g-3">
                   {vertical.items.map((item, index) => (
-                    <div key={item} className="col-md-6">
+                    <div key={item} className="col-12 col-sm-6">
                       <div
                         className="service-capability-card wow fadeIn"
                         data-wow-delay={`${0.15 + index * 0.06}s`}

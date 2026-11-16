@@ -4,8 +4,8 @@ export default function ContactDetails() {
   return (
     <section className="container-fluid contact-details-section py-5">
       <div className="container">
-        <div className="row g-4">
-          <div className="col-xl-3 col-lg-6 wow fadeIn" data-wow-delay=".2s">
+        <div className="row g-3 g-lg-4">
+          <div className="col-12 col-sm-6 col-xl-3 wow fadeIn" data-wow-delay=".2s">
             <div className="contact-info-card h-100">
               <div className="contact-info-icon">
                 <i className="fas fa-envelope" aria-hidden="true" />
@@ -17,7 +17,7 @@ export default function ContactDetails() {
             </div>
           </div>
 
-          <div className="col-xl-3 col-lg-6 wow fadeIn" data-wow-delay=".35s">
+          <div className="col-12 col-sm-6 col-xl-3 wow fadeIn" data-wow-delay=".35s">
             <div className="contact-info-card h-100">
               <div className="contact-info-icon">
                 <i className="fas fa-phone-alt" aria-hidden="true" />
@@ -37,7 +37,7 @@ export default function ContactDetails() {
             </div>
           </div>
 
-          <div className="col-xl-3 col-lg-6 wow fadeIn" data-wow-delay=".5s">
+          <div className="col-12 col-sm-6 col-xl-3 wow fadeIn" data-wow-delay=".5s">
             <div className="contact-info-card h-100">
               <div className="contact-info-icon">
                 <i className="fas fa-map-marker-alt" aria-hidden="true" />
@@ -47,7 +47,7 @@ export default function ContactDetails() {
             </div>
           </div>
 
-          <div className="col-xl-3 col-lg-6 wow fadeIn" data-wow-delay=".65s">
+          <div className="col-12 col-sm-6 col-xl-3 wow fadeIn" data-wow-delay=".65s">
             <div className="contact-info-card h-100">
               <div className="contact-info-icon">
                 <i className="fas fa-clock" aria-hidden="true" />

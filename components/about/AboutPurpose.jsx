@@ -19,9 +19,9 @@ export default function AboutPurpose() {
           Our Vision &amp; Mission
         </h2>
 
-        <div className="row justify-content-center g-4">
+        <div className="row justify-content-center g-3 g-lg-4">
           {purposeBlocks.map((block, index) => (
-            <div key={block.label} className="col-lg-6">
+            <div key={block.label} className="col-12 col-lg-6">
               <article
                 className="about-purpose-card wow fadeInUp"
                 data-wow-delay={`${0.15 + index * 0.1}s`}

@@ -20,9 +20,9 @@ export default function TeamApproach() {
         <div className="team-approach-inner wow fadeInUp" data-wow-delay=".1s">
           <h2>Our Working Approach</h2>
 
-          <div className="row g-4">
+          <div className="row g-3 g-lg-4">
             {approachPoints.map((point, index) => (
-              <div key={point.title} className="col-lg-6">
+              <div key={point.title} className="col-12 col-lg-6">
                 <div
                   className="team-approach-item wow fadeInUp"
                   data-wow-delay={`${0.15 + index * 0.1}s`}

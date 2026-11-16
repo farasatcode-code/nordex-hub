@@ -27,9 +27,9 @@ export default function AboutValues() {
           Core Operating Values
         </h2>
 
-        <div className="row g-4">
+        <div className="row g-3 g-lg-4">
           {values.map((value, index) => (
-            <div key={value.title} className="col-lg-4">
+            <div key={value.title} className="col-12 col-md-6 col-lg-4">
               <div
                 className="home-why-card wow fadeInUp"
                 data-wow-delay={`${0.15 + index * 0.1}s`}

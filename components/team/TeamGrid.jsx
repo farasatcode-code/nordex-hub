@@ -4,9 +4,9 @@ export default function TeamGrid() {
   return (
     <section className="team-grid">
       <div className="container">
-        <div className="row g-4">
+        <div className="row g-3 g-lg-4">
           {teamMembers.map((member, index) => (
-            <div key={member.name} className="col-xl-4 col-lg-6">
+            <div key={member.name} className="col-12 col-md-6 col-xl-4">
               <article
                 className="team-profile-card wow fadeInUp"
                 data-wow-delay={`${0.1 + index * 0.06}s`}

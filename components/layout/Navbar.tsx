@@ -33,9 +33,19 @@ export default function Navbar() {
       }
     };
 
-    document.addEventListener("keydown", handleKeyDown);
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setMenuOpen(false);
+      }
+    };
 
-    return () => document.removeEventListener("keydown", handleKeyDown);
+    document.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("resize", handleResize);
+    };
   }, [menuOpen]);
 
   const handleGetInTouch = () => {
@@ -44,10 +54,14 @@ export default function Navbar() {
   };
 
   return (
-    <div className="container-fluid bg-white">
-      <div className="container">
-        <nav className="navbar navbar-expand-lg py-0">
-          <Link href="/" className="navbar-brand me-lg-3" onClick={closeMenu}>
+    <header className="nh-header sticky-top bg-white border-bottom">
+      <div className="nh-container mx-auto px-4 py-3">
+        <div className="d-flex align-items-center justify-content-between position-relative">
+          <Link
+            href="/"
+            className="nh-brand d-flex align-items-center text-decoration-none flex-shrink-0"
+            onClick={closeMenu}
+          >
             <img
               src="/img/logo.png"
               alt={siteConfig.name}
@@ -55,16 +69,40 @@ export default function Navbar() {
               height={2084}
               className="navbar-logo"
             />
-            <span className="navbar-brand-text">
+            <span className="navbar-brand-text text-nowrap">
               {siteConfig.brandName}
               <span className="navbar-brand-suffix"> {siteConfig.brandSuffix}</span>
             </span>
           </Link>
 
+          <nav className="nh-nav d-none d-md-flex align-items-center" aria-label="Primary">
+            {primaryNav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`nh-link text-nowrap${
+                  isActive(pathname, item.href) ? " active" : ""
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="d-none d-md-flex flex-shrink-0">
+            <button
+              type="button"
+              className="nh-cta btn text-nowrap"
+              onClick={handleGetInTouch}
+            >
+              Get in Touch
+            </button>
+          </div>
+
           <button
             type="button"
-            className="navbar-toggler me-0"
-            aria-controls="navbarCollapse"
+            className="nh-toggler d-inline-flex d-md-none align-items-center justify-content-center"
+            aria-controls="navbarMobileMenu"
             aria-expanded={menuOpen}
             aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
             onClick={() => setMenuOpen((open) => !open)}
@@ -75,38 +113,35 @@ export default function Navbar() {
               <span className="navbar-toggle-bar" />
             </span>
           </button>
+        </div>
 
-          <div
-            className={`collapse navbar-collapse bg-transparent${menuOpen ? " show" : ""}`}
-            id="navbarCollapse"
-          >
-            <div className="navbar-nav ms-auto mx-xl-auto p-0">
-              {primaryNav.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`nav-item nav-link${
-                    isActive(pathname, item.href) ? " active" : ""
-                  }`}
-                  onClick={closeMenu}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-
-            <div className="navbar-cta d-flex pb-3 pb-lg-0">
-              <button
-                type="button"
-                className="btn navbar-cta-btn px-4 py-2"
-                onClick={handleGetInTouch}
+        <div
+          id="navbarMobileMenu"
+          className={`nh-mobile-menu d-md-none${menuOpen ? " show" : ""}`}
+        >
+          <nav className="d-flex flex-column" aria-label="Mobile primary">
+            {primaryNav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`nh-mobile-link text-nowrap${
+                  isActive(pathname, item.href) ? " active" : ""
+                }`}
+                onClick={closeMenu}
               >
-                Get in Touch
-              </button>
-            </div>
-          </div>
-        </nav>
+                {item.label}
+              </Link>
+            ))}
+            <button
+              type="button"
+              className="nh-cta btn text-nowrap w-100 mt-2"
+              onClick={handleGetInTouch}
+            >
+              Get in Touch
+            </button>
+          </nav>
+        </div>
       </div>
-    </div>
+    </header>
   );
 }

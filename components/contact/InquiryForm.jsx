@@ -64,7 +64,7 @@ export default function InquiryForm({ source = "contact-modal", compact = false 
       ) : null}
 
       <div className="row g-3">
-        <div className="col-md-6">
+        <div className="col-12 col-md-6">
           <label className="form-label inquiry-label" htmlFor={`${formId}-name`}>
             Full Name
           </label>
@@ -80,7 +80,7 @@ export default function InquiryForm({ source = "contact-modal", compact = false 
           />
         </div>
 
-        <div className="col-md-6">
+        <div className="col-12 col-md-6">
           <label className="form-label inquiry-label" htmlFor={`${formId}-organization`}>
             Organization / Company Name
           </label>
@@ -96,7 +96,7 @@ export default function InquiryForm({ source = "contact-modal", compact = false 
           />
         </div>
 
-        <div className="col-md-6">
+        <div className="col-12 col-md-6">
           <label className="form-label inquiry-label" htmlFor={`${formId}-email`}>
             Email Address <span className="inquiry-required">*</span>
           </label>
@@ -113,7 +113,7 @@ export default function InquiryForm({ source = "contact-modal", compact = false 
           />
         </div>
 
-        <div className="col-md-6">
+        <div className="col-12 col-md-6">
           <label className="form-label inquiry-label" htmlFor={`${formId}-phone`}>
             Phone / WhatsApp Number <span className="inquiry-required">*</span>
           </label>
