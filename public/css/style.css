@@ -940,6 +940,46 @@
 .footer-divider { border-color: rgba(255, 255, 255, .15); opacity: 1; }
 .footer-copyright { color: #d7dde5 !important; font-size: 15px; }
 
+.footer-bottom-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), auto));
+    column-gap: .5rem;
+    row-gap: 0;
+    align-items: center;
+}
+
+.footer-bottom-spacer { min-width: clamp(174px, 15.55vw, 199px); }
+.footer-credit-cell { display: block; min-width: 0; }
+
+.footer-credit {
+    color: #8b949e;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(12px, 1.2vw, 14px);
+    line-height: 1.6;
+    text-align: center;
+}
+
+.footer-credit-label { color: #8b949e; }
+
+.footer-credit-name {
+    color: #ffffff;
+    font-weight: 600;
+    white-space: nowrap;
+    text-shadow: 0 0 6px rgba(30, 138, 66, .75), 0 0 14px rgba(30, 138, 66, .5), 0 0 26px rgba(30, 138, 66, .3);
+    animation: footer-credit-bulb 2.4s ease-in-out infinite;
+}
+
+@keyframes footer-credit-bulb {
+    0%, 100% {
+        opacity: .55;
+        text-shadow: 0 0 4px rgba(30, 138, 66, .25);
+    }
+    50% {
+        opacity: 1;
+        text-shadow: 0 0 6px rgba(30, 138, 66, .75), 0 0 14px rgba(30, 138, 66, .5), 0 0 26px rgba(30, 138, 66, .3);
+    }
+}
+
 /*** Blueprint V3 Footer End ***/
 
 

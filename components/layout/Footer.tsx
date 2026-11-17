@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import FooterCredit from "@/components/layout/FooterCredit";
+
 import {
   footerLegalLinks,
   footerQuickLinks,
@@ -55,9 +57,15 @@ export default function Footer() {
 
         <hr className="footer-divider mt-5 mb-4" />
 
-        <p className="footer-copyright text-center text-light mb-0">
-          © 2026 Nordex Hub. All rights reserved.
-        </p>
+        <div className="footer-bottom-bar">
+          <span className="footer-bottom-spacer" aria-hidden="true" />
+          <p className="footer-copyright text-center text-light mb-0 mx-auto">
+            © 2026 Nordex Hub. All rights reserved.
+          </p>
+          <span className="footer-credit-cell">
+            <FooterCredit />
+          </span>
+        </div>
       </div>
     </footer>
   );
