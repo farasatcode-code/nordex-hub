@@ -747,7 +747,7 @@
 /*** Blueprint V3 Navbar Start ***/
 
 .nh-header {
-    z-index: 50;
+    z-index: 1020;
 }
 
 .nh-container {
@@ -1176,6 +1176,7 @@
     justify-content: center;
     padding: clamp(12px, 3vw, 24px);
     overflow-y: auto;
+    overscroll-behavior: contain;
     background: rgba(13, 17, 23, .72);
 }
 
@@ -1184,6 +1185,7 @@
     width: 100%;
     max-width: 760px;
     max-height: calc(100vh - 2 * clamp(12px, 3vw, 24px));
+    max-height: calc(100dvh - 2 * clamp(12px, 3vw, 24px));
     margin: auto;
     padding: clamp(22px, 4vw, 36px);
     overflow-y: auto;
@@ -1303,10 +1305,10 @@
 
 .services-hero::after {
     position: absolute;
-    right: -120px;
-    bottom: -140px;
-    width: 420px;
-    height: 420px;
+    right: -30vw;
+    bottom: -34vw;
+    width: min(420px, 95vw);
+    height: min(420px, 95vw);
     content: "";
     background: radial-gradient(circle, rgba(30, 138, 66, 0.45), transparent 70%);
     pointer-events: none;
@@ -1483,7 +1485,7 @@
     content: "\f0c1";
     color: rgba(255, 255, 255, 0.08);
     font-family: "font awesome 5 free";
-    font-size: 170px;
+    font-size: clamp(90px, 24vw, 170px);
     font-weight: 900;
     line-height: 1;
 }
@@ -1514,7 +1516,7 @@
 
 /*** Blueprint V3 Home Page Start ***/
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-wrap: break-word; }
 
 .home-hero {
     position: relative;
@@ -1541,10 +1543,10 @@ html { scroll-behavior: smooth; }
 
 .home-hero::after {
     position: absolute;
-    right: -120px;
-    bottom: -140px;
-    width: 420px;
-    height: 420px;
+    right: -30vw;
+    bottom: -34vw;
+    width: min(420px, 95vw);
+    height: min(420px, 95vw);
     content: "";
     background: radial-gradient(circle, rgba(30, 138, 66, 0.45), transparent 70%);
     pointer-events: none;
@@ -1629,8 +1631,8 @@ html { scroll-behavior: smooth; }
     transform: translate(-50%, -50%);
 }
 
-.home-hero-orbit--outer { width: 340px; height: 340px; }
-.home-hero-orbit--inner { width: 220px; height: 220px; border-style: dashed; border-color: rgba(255, 255, 255, 0.22); }
+.home-hero-orbit--outer { width: min(340px, 72vw); height: min(340px, 72vw); }
+.home-hero-orbit--inner { width: min(220px, 48vw); height: min(220px, 48vw); border-style: dashed; border-color: rgba(255, 255, 255, 0.22); }
 
 .home-hero-core {
     position: absolute;
@@ -2190,6 +2192,106 @@ html { scroll-behavior: smooth; }
 .team-approach-item p { margin-bottom: 0; color: #d7e4da; font-size: 15px; line-height: 1.75; }
 
 /*** Blueprint V3 Team Page End ***/
+
+
+/*** Responsive Start ***/
+
+@media (max-width: 991.98px) {
+    .nh-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .nh-nav { gap: 1.25rem; }
+    .nh-link { font-size: 15px; }
+    .navbar-brand-text { font-size: 20px; }
+    .navbar-logo { height: 44px; }
+
+    .home-hero-actions .home-cta,
+    .services-hero-actions .services-cta { flex: 1 1 100%; }
+}
+
+@media (max-width: 767.98px) {
+    .footer-link,
+    .contact-info-link,
+    .contact-whatsapp,
+    .page-header .breadcrumb-item a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+    }
+
+    .footer-links { gap: 2px; }
+    .footer-credit-name { white-space: normal; }
+
+    .footer > .container { padding-top: 2.5rem !important; padding-bottom: 2rem !important; }
+    .footer-divider { margin-top: 2rem !important; margin-bottom: 1.5rem !important; }
+
+    .back-to-top { right: 16px; bottom: 16px; width: 44px; height: 44px; }
+
+    .page-header,
+    .contact-hero { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+    .page-header > .container { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+    .page-header:not(.contact-hero) h1.display-2 { font-size: clamp(2rem, 9vw, 3rem) !important; }
+    .page-header .breadcrumb { flex-wrap: wrap; font-size: 14px; }
+    .page-header .breadcrumb-item,
+    .page-header .breadcrumb-item a { font-size: 14px; }
+
+    .contact-details-section,
+    .inquiry-section,
+    .inquiry-guidance-section { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+    .inquiry-guidance-section { margin-bottom: 2.5rem !important; }
+
+    .contact-hero { min-height: 280px; }
+    .about-hero-panel,
+    .services-hero-panel { max-width: 360px; margin-left: auto; margin-right: auto; }
+
+    .home-hero-visual { min-height: 300px; }
+    .home-hero-core { width: 90px; height: 90px; font-size: 30px; }
+    .home-hero-node { width: 50px; height: 50px; font-size: 20px; border-radius: 12px; }
+
+    .home-about-visual { min-height: clamp(240px, 64vw, 320px); }
+    .home-about-shape { top: 12px; right: 8px; }
+    .home-about-image--main { width: 76%; height: 74%; }
+    .home-about-image--secondary { width: 56%; height: 54%; }
+
+    .home-service-card,
+    .about-purpose-card,
+    .team-profile-card,
+    .home-why-card { padding: 24px 20px; }
+
+    .team-approach-item { padding: 20px; }
+    .team-approach-icon { flex-basis: 44px; width: 44px; height: 44px; font-size: 18px; }
+}
+
+@media (max-width: 575.98px) {
+    .home-hero,
+    .services-hero { padding-top: 56px; padding-bottom: 48px; }
+
+    .home-hero-badge { font-size: 12px; line-height: 1.5; }
+    .home-hero p,
+    .home-about p,
+    .home-government p,
+    .about-structure-inner p,
+    .services-closing-inner p { font-size: 15px; }
+
+    .home-government-inner,
+    .about-structure-inner,
+    .team-approach-inner,
+    .services-closing-inner { border-radius: 20px; }
+
+    .footer-bottom-bar {
+        grid-template-columns: 1fr;
+        row-gap: 10px;
+        justify-items: center;
+    }
+
+    .footer-bottom-spacer { display: none; }
+    .footer-credit { text-align: center !important; }
+    .footer-copyright { font-size: 14px; }
+}
+
+/*** Responsive End ***/
 
 .home-hero h1,
 .services-hero h1,

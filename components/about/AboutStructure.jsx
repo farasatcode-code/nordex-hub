@@ -3,7 +3,7 @@ export default function AboutStructure() {
     <section className="about-structure">
       <div className="container">
         <div className="about-structure-inner wow fadeInUp" data-wow-delay=".1s">
-          <div className="row align-items-center g-5">
+          <div className="row align-items-center g-4 g-lg-5">
             <div className="col-lg-7">
               <h2>Partnership &amp; Operational Structure</h2>
               <p>

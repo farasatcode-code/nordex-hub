@@ -4,7 +4,7 @@ export default function HomeAbout() {
   return (
     <section className="home-about">
       <div className="container">
-        <div className="row align-items-center g-5">
+        <div className="row align-items-center g-4 g-lg-5">
           <div className="col-lg-6 wow fadeIn" data-wow-delay=".15s">
             <h2>Rooted in Gilgit-Baltistan, Built for Scale</h2>
             <p>

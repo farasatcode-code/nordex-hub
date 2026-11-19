@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <footer className="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
       <div className="container pt-5 pb-4">
-        <div className="row g-5">
+        <div className="row g-4 g-lg-5">
           <div className="col-lg-6 col-md-12">
             <Link href="/" className="footer-brand">
               <img

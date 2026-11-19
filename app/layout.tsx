@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 
 import ContactModalProvider from "@/components/contact/ContactModalProvider";
@@ -60,6 +60,12 @@ export const metadata: Metadata = {
     shortcut: ["/favicon.png"],
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

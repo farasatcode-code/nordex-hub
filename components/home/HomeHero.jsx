@@ -4,7 +4,7 @@ export default function HomeHero() {
   return (
     <section className="home-hero">
       <div className="container">
-        <div className="row align-items-center g-5">
+        <div className="row align-items-center g-4 g-lg-5">
           <div className="col-lg-7">
             <span className="home-hero-badge wow fadeInDown" data-wow-delay=".1s">
               <i className="fas fa-map-marker-alt" aria-hidden="true" />

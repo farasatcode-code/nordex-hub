@@ -34,16 +34,26 @@ export default function Navbar() {
     };
 
     const handleResize = () => {
-      if (window.innerWidth >= 768) {
+      if (window.innerWidth >= 992) {
         setMenuOpen(false);
       }
     };
 
+    const handlePointerDown = (event: PointerEvent) => {
+      if (event.target instanceof Element && !event.target.closest(".nh-header")) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.body.style.overflow = "hidden";
     document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("pointerdown", handlePointerDown);
     window.addEventListener("resize", handleResize);
 
     return () => {
+      document.body.style.overflow = "";
       document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("pointerdown", handlePointerDown);
       window.removeEventListener("resize", handleResize);
     };
   }, [menuOpen]);
@@ -55,7 +65,7 @@ export default function Navbar() {
 
   return (
     <header className="nh-header sticky-top bg-white border-bottom">
-      <div className="nh-container mx-auto px-4 py-3">
+      <div className="nh-container mx-auto py-3">
         <div className="d-flex align-items-center justify-content-between position-relative">
           <Link
             href="/"
@@ -75,12 +85,12 @@ export default function Navbar() {
             </span>
           </Link>
 
-          <nav className="nh-nav d-none d-md-flex align-items-center" aria-label="Primary">
+          <nav className="nh-nav d-none d-lg-flex align-items-center" aria-label="Primary">
             {primaryNav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`nh-link text-nowrap${
+                className={`nh-link${
                   isActive(pathname, item.href) ? " active" : ""
                 }`}
               >
@@ -89,7 +99,7 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <div className="d-none d-md-flex flex-shrink-0">
+          <div className="d-none d-lg-flex flex-shrink-0">
             <button
               type="button"
               className="nh-cta btn text-nowrap"
@@ -101,7 +111,7 @@ export default function Navbar() {
 
           <button
             type="button"
-            className="nh-toggler d-inline-flex d-md-none align-items-center justify-content-center"
+            className="nh-toggler d-inline-flex d-lg-none align-items-center justify-content-center"
             aria-controls="navbarMobileMenu"
             aria-expanded={menuOpen}
             aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
@@ -117,14 +127,14 @@ export default function Navbar() {
 
         <div
           id="navbarMobileMenu"
-          className={`nh-mobile-menu d-md-none${menuOpen ? " show" : ""}`}
+          className={`nh-mobile-menu d-lg-none${menuOpen ? " show" : ""}`}
         >
           <nav className="d-flex flex-column" aria-label="Mobile primary">
             {primaryNav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`nh-mobile-link text-nowrap${
+                className={`nh-mobile-link${
                   isActive(pathname, item.href) ? " active" : ""
                 }`}
                 onClick={closeMenu}

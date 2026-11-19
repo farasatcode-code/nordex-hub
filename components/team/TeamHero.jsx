@@ -2,7 +2,7 @@ export default function TeamHero() {
   return (
     <section className="services-hero team-hero">
       <div className="container">
-        <div className="row align-items-center g-5">
+        <div className="row align-items-center g-4 g-lg-5">
           <div className="col-lg-8">
             <h1 className="wow fadeInUp" data-wow-delay=".1s">
               Meet the Leadership Behind Nordex Hub
