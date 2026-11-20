@@ -93,8 +93,8 @@ export default function IntroSplash() {
               <rect x="44" y="156" width="28" height="68" rx="14" fill="#f1c27d" transform="rotate(12 58 190)" />
 
               <g className="intro-arm-wave">
-                <rect x="160" y="118" width="26" height="70" rx="13" fill="#f1c27d" />
-                <circle cx="173" cy="114" r="15" fill="#f1c27d" />
+                <rect x="148" y="148" width="24" height="66" rx="12" fill="#f1c27d" />
+                <circle cx="160" cy="218" r="14" fill="#f1c27d" />
               </g>
 
               <circle cx="116" cy="98" r="48" fill="#f1c27d" />
@@ -181,8 +181,8 @@ export default function IntroSplash() {
         }
 
         .intro-arm-wave {
-          transform-box: fill-box;
-          transform-origin: 20% 12%;
+          transform-box: view-box;
+          transform-origin: 160px 150px;
           animation: introWave 0.55s ease-in-out 1.2s 3;
         }
 
@@ -283,11 +283,13 @@ export default function IntroSplash() {
           100% {
             transform: rotate(0deg);
           }
-          25% {
-            transform: rotate(-28deg);
+          20%,
+          60% {
+            transform: rotate(-120deg);
           }
-          75% {
-            transform: rotate(12deg);
+          40%,
+          80% {
+            transform: rotate(-160deg);
           }
         }
 
