@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import ContactModalProvider from "@/components/contact/ContactModalProvider";
 import BackToTop from "@/components/layout/BackToTop";
 import Footer from "@/components/layout/Footer";
+import IntroSplash from "@/components/layout/IntroSplash";
 import Navbar from "@/components/layout/Navbar";
 import Spinner from "@/components/layout/Spinner";
 
@@ -95,6 +96,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body suppressHydrationWarning>
         <ContactModalProvider>
+          <IntroSplash />
           <Spinner />
           <Navbar />
           {children}
