@@ -1368,6 +1368,11 @@
     border-radius: 16px;
 }
 
+.services-hero-panel-icon:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    aspect-ratio: 2.1;
+}
+
 .services-cta {
     display: inline-flex;
     align-items: center;
