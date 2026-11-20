@@ -729,6 +729,7 @@
 
 .navbar-brand-text {
     display: inline-block;
+    margin-left: -0.762em;
     color: #14572c;
     font-family: "Saira", sans-serif;
     font-size: 22px;
@@ -757,7 +758,7 @@
 }
 
 .nh-brand {
-    gap: 10px;
+    gap: 4px;
 }
 
 .nh-nav {
@@ -1786,7 +1787,7 @@ html { scroll-behavior: smooth; overflow-wrap: break-word; }
 .home-card-link:hover,
 .home-card-link:focus { color: #1e8a42; gap: 12px; }
 
-.home-government { padding-bottom: clamp(56px, 7vw, 96px); background: #f4f8f5; }
+.home-government { padding-bottom: clamp(56px, 7vw, 96px); background: #ffffff; }
 
 .home-government-inner {
     position: relative;
