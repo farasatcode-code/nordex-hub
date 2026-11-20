@@ -15,13 +15,15 @@ export default function Footer() {
         <div className="row g-4 g-lg-5">
           <div className="col-lg-6 col-md-12">
             <Link href="/" className="footer-brand">
-              <img
-                src="/img/logo.png"
-                alt={siteConfig.name}
-                width={2084}
-                height={2084}
-                className="footer-logo"
-              />
+              <span className="footer-logo-box">
+                <img
+                  src="/img/logo.png"
+                  alt={siteConfig.name}
+                  width={2084}
+                  height={2084}
+                  className="footer-logo"
+                />
+              </span>
               <span className="footer-brand-text">Nordex Hub</span>
             </Link>
             <p className="footer-tagline mt-4 mb-0 text-light">
