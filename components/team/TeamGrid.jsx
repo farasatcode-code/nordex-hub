@@ -11,9 +11,10 @@ export default function TeamGrid() {
                 className="team-profile-card wow fadeInUp"
                 data-wow-delay={`${0.1 + index * 0.06}s`}
               >
+                <div className="team-profile-band" aria-hidden="true" />
                 <div className="team-profile-avatar">
                   {member.photo ? (
-                    <img src={member.photo} alt={member.name} />
+                    <img src={member.photo} alt={member.name} width={176} height={176} />
                   ) : (
                     <span aria-hidden="true">{getInitials(member.name)}</span>
                   )}
